@@ -160,7 +160,7 @@ app.post("/deletepost/:postid",async function(req,res){
 })
 
 app.get("/profile/upload", isLoggedIn ,async function(req,res){
-    let user = await userModel.findOne({ email: req.user.email })
+    let user = await userModel.findOne({ email: req.user.email }).populate('posts')
     res.render("profileupload",{user})
 })
 app.post("/uploadprofilepic",isLoggedIn,upload.single('profilepic'),async function(req,res){
