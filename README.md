@@ -17,6 +17,7 @@ This project demonstrates a mini social media platform where users can register,
 ## ✨ Features
 
 - 🔑 **User Authentication & Authorization**
+- 🔒🔑 JWT Tokens , BCYPT, CRYPTO, etc are used.
 - 👤 **Profile Picture Upload / Update**
 - 📝 **Post Creation & Editing**
 - ❤️ **Like Posts**
