@@ -1,5 +1,5 @@
 # Social Media Web App
-
+For screenshots, check the [Screenshots](./Screenshots) folder.  
 A full-stack **Social Media Web Application** built using **Node.js, Express, MongoDB, and EJS** with **Server-Side Rendering**.  
 It includes authentication, user profiles, posts, likes, and more.
 
