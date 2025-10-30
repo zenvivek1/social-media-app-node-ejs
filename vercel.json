@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "app.js" }],
   "functions": {
     "app.js": {
-      "includeFiles": [
-        "views/**",
-        "public/**"
-      ]
+      "runtime": "nodejs18.x",
+      "includeFiles": "views/**"
     }
-  }
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "app.js" }
+  ]
 }
+    
