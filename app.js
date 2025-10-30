@@ -176,7 +176,7 @@ app.post("/uploadprofilepic",isLoggedIn,upload.single('profilepic'),async functi
 function isLoggedIn(req, res, next) {
     if (req.cookies.token) {
 
-        if (req.cookies.token === "") res.send("You must be logged in!")
+        if (req.cookies.token === "") res.redirect('/')
         else {
             jwt.verify(req.cookies.token, "shhhh", (err, decoded) => {
                 if (err) {
@@ -188,10 +188,13 @@ function isLoggedIn(req, res, next) {
             })
         }
     } else {
-        res.send("You must be logged in!")
+        res.redirect('/loginpage')
     }
 }
 
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
 
-
-app.listen(3000);
+module.exports = app;
